@@ -2,7 +2,6 @@
 
 [build]
   command = "npm run build"
-  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -11,20 +10,11 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Redirects for Next.js App Router
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200
-
 # Function configuration for API routes
 [functions]
   # Maximum function timeout (in seconds)
   # Free tier: 10s, Pro: 26s
   timeout = 26
-  
-  # Node.js version for functions
-  node_bundler = "esbuild"
 
 # Headers for security and performance
 [[headers]]
