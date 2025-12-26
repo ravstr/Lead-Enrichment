@@ -23,11 +23,8 @@ import HomeHeroTitle from "@/components/app/(home)/sections/hero/Title/Title";
 import HeroScraping from "@/components/app/(home)/sections/hero-scraping/HeroScraping";
 
 // Import header components
-import HeaderBrandKit from "@/components/shared/header/BrandKit/BrandKit";
 import HeaderWrapper from "@/components/shared/header/Wrapper/Wrapper";
 import HeaderDropdownWrapper from "@/components/shared/header/Dropdown/Wrapper/Wrapper";
-import GithubIcon from "@/components/shared/header/Github/_svg/GithubIcon";
-import ButtonUI from "@/components/shared/button/button";
 
 // Ui Imports
 import { toast } from "sonner";
@@ -150,9 +147,6 @@ export default function HomePage() {
     setSelectedFields([]);
   };
 
-  const openFirecrawlWebsite = () => {
-    window.open("https://www.firecrawl.dev", "_blank");
-  };
 
   const handleApiKeySubmit = async () => {
     // Check environment again to see what's missing
@@ -167,7 +161,7 @@ export default function HomePage() {
     const needsOpenAI = !hasEnvOpenAI && !hasSavedOpenAI;
 
     if (needsFirecrawl && !firecrawlApiKey.trim()) {
-      toast.error("Please enter a valid Firecrawl API key");
+      toast.error("Please enter a valid API key");
       return;
     }
 
@@ -191,7 +185,7 @@ export default function HomePage() {
         });
 
         if (!response.ok) {
-          throw new Error("Invalid Firecrawl API key");
+          throw new Error("Invalid API key");
         }
 
         // Save the API key to localStorage
@@ -229,38 +223,18 @@ export default function HomePage() {
           {step === "enrichment" ? (
             <div className="py-20 px-16 flex justify-between items-center">
               <div className="flex gap-24 items-center">
-                <HeaderBrandKit />
+                <h1 className="text-xl font-semibold">Fire Enrich</h1>
               </div>
               <div className="flex gap-8">
-                <a
-                  className="contents"
-                  href="https://github.com/firecrawl/fire-enrich"
-                  target="_blank"
-                >
-                  <ButtonUI variant="tertiary">
-                    <GithubIcon />
-                    Use this Template
-                  </ButtonUI>
-                </a>
               </div>
             </div>
           ) : (
             <HeaderWrapper>
               <div className="max-w-[900px] mx-auto w-full flex justify-between items-center">
                 <div className="flex gap-24 items-center">
-                  <HeaderBrandKit />
+                  <h1 className="text-xl font-semibold">Fire Enrich</h1>
                 </div>
                 <div className="flex gap-8">
-                  <a
-                    className="contents"
-                    href="https://github.com/firecrawl/fire-enrich"
-                    target="_blank"
-                  >
-                    <ButtonUI variant="tertiary">
-                      <GithubIcon />
-                      Use this Template
-                    </ButtonUI>
-                  </a>
                 </div>
               </div>
             </HeaderWrapper>
@@ -295,12 +269,6 @@ export default function HomePage() {
                     <br className="lg-max:hidden" />
                     crawled from all over the internet.
                   </p>
-                  <Link
-                    className="bg-black-alpha-4 hover:bg-black-alpha-6 rounded-6 px-8 lg:px-6 text-label-large h-30 lg:h-24 block mt-8 mx-auto w-max gap-4 transition-all"
-                    href="https://firecrawl.dev"
-                  >
-                    Powered by Firecrawl
-                  </Link>
                 </motion.div>
               ) : (
                 <motion.div
@@ -424,28 +392,19 @@ export default function HomePage() {
           <DialogHeader>
             <DialogTitle>API Keys Required</DialogTitle>
             <DialogDescription>
-              This tool requires API keys for Firecrawl and OpenAI to enrich
+              This tool requires API keys for web scraping and AI processing to enrich
               your CSV data.
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
             {missingKeys.firecrawl && (
               <>
-                <Button
-                  onClick={openFirecrawlWebsite}
-                  variant="secondary"
-                  size="default"
-                  className="flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <ExternalLink style={{ width: '20px', height: '20px', minWidth: '20px', minHeight: '20px' }} />
-                  Get Firecrawl API Key
-                </Button>
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="firecrawl-key"
                     className="text-body-small font-medium"
                   >
-                    Firecrawl API Key
+                    Web Scraping API Key
                   </label>
                   <Input
                     id="firecrawl-key"
