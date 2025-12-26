@@ -223,7 +223,6 @@ export default function HomePage() {
           {step === "enrichment" ? (
             <div className="py-20 px-16 flex justify-between items-center">
               <div className="flex gap-24 items-center">
-                <h1 className="text-xl font-semibold">Fire Enrich</h1>
               </div>
               <div className="flex gap-8">
               </div>
@@ -232,7 +231,6 @@ export default function HomePage() {
             <HeaderWrapper>
               <div className="max-w-[900px] mx-auto w-full flex justify-between items-center">
                 <div className="flex gap-24 items-center">
-                  <h1 className="text-xl font-semibold">Fire Enrich</h1>
                 </div>
                 <div className="flex gap-8">
                 </div>
