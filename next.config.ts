@@ -24,6 +24,10 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  // Add experimental flag for better Netlify compatibility
+  experimental: {
+    serverComponentsExternalPackages: ['@mendable/firecrawl-js'],
+  },
 };
 
 export default nextConfig;
