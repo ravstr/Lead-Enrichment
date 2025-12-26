@@ -257,8 +257,7 @@ export const encryptText = (
 export default function HomeHeroTitle() {
   return (
     <div className="text-title-h1 mx-auto text-center [&_span]:text-heat-100 mb-12 lg:mb-16">
-      Lead Enrich <br />
-      <span>Drag, Drop, Enrich</span>
+      Lead Enrich
     </div>
   );
 }

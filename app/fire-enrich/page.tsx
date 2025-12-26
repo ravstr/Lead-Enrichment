@@ -202,9 +202,6 @@ export default function CSVEnrichmentPage() {
           <span className="relative px-1 text-transparent bg-clip-text bg-gradient-to-tr from-red-600 to-yellow-500 inline-flex justify-center items-center">
             Lead Enrich
           </span>
-          <span className="block leading-[1.1] opacity-0 animate-fade-up [animation-duration:500ms] [animation-delay:400ms] [animation-fill-mode:forwards]">
-            Drag, Drop, Enrich.
-          </span>
         </h1>
       </div>
 
